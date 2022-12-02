@@ -1,17 +1,17 @@
 module Day1
   open("input.txt") do f
-    l = [i for i in split(read(f, String), "\n")]
-    global c = 0
+    l = [i for i in split(replace(read(f, String), "\r" => ""), "\n")]
+    c = 0
     ls = []
 
     for i in l
       if !isempty(i)
-        global c += parse(Int64, i)
+        c += parse(Int64, i)
         continue
       end
 
       push!(ls, c)
-      global c = 0
+      c = 0
     end
 
     sort!(ls)
