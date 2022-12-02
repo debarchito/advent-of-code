@@ -3,7 +3,7 @@ module Day2
     ls = filter(!isempty, [i for i in split(replace(read(f, String), "\r" => ""), "\n")])
     mp = Dict(
       "A" => 0, "B" => 1, "C" => 2,
-      "X" => 0, "Y" => 1, "Z" => 2
+      "X" => 0, "Y" => 1, "Z" => 2,
     )
     ky = [1, 2, 3]
     sc = 0
@@ -11,7 +11,7 @@ module Day2
     for i in ls
       opp, me = [mp[j] for j in split(i, " ")]
 
-      if mod((me - opp), 3) == 1
+      if mod(me - opp, 3) == 1
         sc += 6
       elseif me == opp
         sc += 3
