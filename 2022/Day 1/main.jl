@@ -1,5 +1,5 @@
 module Day1
-  open("Day1/input.txt") do f
+  open("input.txt") do f
     l = [i for i in split(read(f, String), "\n")]
     global c = 0
     ls = []
