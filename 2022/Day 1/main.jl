@@ -1,5 +1,5 @@
 module Day1
-  open("input.txt") do f
+  open("input.txt", "r") do f
     l = [i for i in split(replace(read(f, String), "\r" => ""), "\n")]
     c = 0
     ls = []
@@ -11,6 +11,7 @@ module Day1
       end
 
       push!(ls, c)
+
       c = 0
     end
 
